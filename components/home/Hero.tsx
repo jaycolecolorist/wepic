@@ -33,7 +33,7 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           <HeroText>
             <Monogram className="mx-auto h-14 w-auto text-cyan drop-shadow-[0_0_24px_rgba(0,175,239,0.6)] sm:h-16" />
             <p className="mt-6 text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-cyan-soft sm:text-xs sm:tracking-[0.4em]">{dict.hero.eyebrow}</p>
-            <h1 className="display mx-auto mt-5 max-w-4xl text-[2.6rem] sm:text-6xl lg:text-[5.5rem]">{dict.hero.title}</h1>
+            <h1 className="display mx-auto mt-5 max-w-4xl text-[clamp(1.9rem,10.5vw,2.6rem)] sm:text-6xl lg:text-[5.5rem]">{dict.hero.title}</h1>
             <p className="mt-6 font-serif text-2xl italic text-white/85 sm:text-3xl">{dict.hero.subtitle}</p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link href={href(locale, "/book?type=package")} className="btn btn-primary w-full sm:w-auto">
