@@ -39,7 +39,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
         </div>
       </section>
       <StudioTeaser locale={lang} dict={dict} />
-      <Testimonials dict={dict} />
+      <Testimonials dict={dict} locale={lang} />
       <ContactSection dict={dict} />
     </>
   );

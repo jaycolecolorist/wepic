@@ -266,26 +266,55 @@
     "points": ["White infinity cove", "Styled sets", "Pro lighting", "Makeup station", "Podcast setup"]
   },
   "testimonials": {
-    "eyebrow": "Client stories",
+    "eyebrow": "Client reviews",
     "title": "What clients say",
-    "note": "Sample testimonials shown for layout only — replace with real client reviews before launch.",
-    "items": [
-      {
-        "quote": "Sample review — replace with a real client quote about a WEPIC photo shoot.",
-        "name": "Client name",
-        "role": "Business owner"
-      },
-      {
-        "quote": "Sample review — replace with a real client quote about a monthly content package.",
-        "name": "Client name",
-        "role": "Brand manager"
-      },
-      {
-        "quote": "Sample review — replace with a real client quote about renting the WEPIC studio.",
-        "name": "Client name",
-        "role": "Content creator"
-      }
-    ]
+    "googleRating": "{rating} out of 5 on Google",
+    "googleCount": "{count} Google reviews",
+    "readAll": "Read all reviews on Google",
+    "write": "Write a review",
+    "sourceGoogle": "Google review",
+    "sourceSite": "Website review",
+    "originalNote": "Reviews from our Google Maps listing."
+  },
+  "review": {
+    "title": "Share your experience",
+    "intro": "Worked with WEPIC or rented the studio? Tell us how it went. Your review is sent to the studio and added to this page once they have checked it.",
+    "name": "Your name",
+    "nameHint": "This name is shown with your review.",
+    "rating": "Your rating",
+    "stars": "{n} out of 5 stars",
+    "service": "What did you book? (optional)",
+    "services": {
+      "shoot": "Photo or video shoot",
+      "package": "Monthly content package",
+      "studio": "Studio rental",
+      "podcast": "Podcast recording",
+      "other": "Something else"
+    },
+    "choose": "Choose…",
+    "text": "Your review",
+    "textPlaceholder": "What did you like? How was the shoot, the team, the studio?",
+    "consent": "WEPIC may publish my name and review on its website.",
+    "sendWhatsapp": "Send review via WhatsApp",
+    "sendEmail": "Send by Email",
+    "required": "Please fill in this field.",
+    "needRating": "Please choose a star rating.",
+    "tooShort": "Please write at least 10 characters.",
+    "needConsent": "Please tick the box so we can publish your review.",
+    "thanksTitle": "Thank you for your review!",
+    "thanksBody": "Your review has been handed to WhatsApp / your email app — please press send there. The studio will add it to this page after checking it.",
+    "alsoGoogle": "Also post it on Google",
+    "another": "Write another review",
+    "close": "Close",
+    "messageHeading": "New website review",
+    "subject": "Website review from {name}",
+    "labels": {
+      "name": "Name",
+      "rating": "Rating",
+      "service": "Booked",
+      "review": "Review",
+      "consent": "Permission to publish: yes"
+    }
   },
   "studio": {
     "eyebrow": "Studio rental",

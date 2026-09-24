@@ -1,6 +1,6 @@
 import { site } from "@/config/site";
 
-/** Google Map of the studio address. TODO: replace site.mapEmbedUrl with the studio's exact pin. */
+/** Google Map pinned on the studio's Google Maps listing. */
 export function MapEmbed({ title, className = "" }: { title: string; className?: string }) {
   return (
     <div className={`relative overflow-hidden rounded-2xl bg-navy ring-1 ring-white/10 ${className}`}>

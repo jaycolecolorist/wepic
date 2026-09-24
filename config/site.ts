@@ -27,9 +27,9 @@ export const site = {
     city: "Doha",
     country: "QA",
   },
-  // TODO: replace with the studio's exact Google Maps pin once confirmed (this searches the address).
-  mapEmbedUrl: "https://maps.google.com/maps?q=C-Ring%20Road%20Building%20244%2C%20Doha%2C%20Qatar&z=15&output=embed",
-  mapLinkUrl: "https://www.google.com/maps/search/?api=1&query=C-Ring+Road+Building+244+Doha+Qatar",
+  /** Exact pin of the "Wepic photography" Google Maps listing (25.2631222, 51.5325315). */
+  mapEmbedUrl: "https://maps.google.com/maps?q=25.2631222,51.5325315&z=17&output=embed",
+  mapLinkUrl: "https://www.google.com/maps?cid=3318919443409660594",
   /** From the brand's "We're open Sunday to Thursday" post. */
   openDays: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
   openTime: null as string | null, // TODO: e.g. "10:00" — not in the assets
@@ -157,4 +157,33 @@ export const studioGallery: { src: string; w: number; h: number; alt: { en: stri
   { src: "/images/studio/set-majlis-wide.jpg", w: 2400, h: 1350, alt: { en: "Majlis set on a raised white platform", ar: "ديكور المجلس على منصة بيضاء مرتفعة" } },
   { src: "/images/studio/set-armchair.jpg", w: 1600, h: 2400, alt: { en: "White armchair set with warm lighting and a plant", ar: "ديكور كرسي أبيض بإضاءة دافئة ونبتة" } },
   { src: "/images/studio/studio-floor-5.jpg", w: 2400, h: 1600, alt: { en: "Studio dressed with a Ramadan-themed set", ar: "الاستوديو بديكور رمضاني" } },
+];
+
+// ---------------------------------------------------------------------------
+// Reviews — copied word for word from the "Wepic photography" Google Maps listing
+// on 2026-09-24. Update googleRating when the listing changes.
+// Left out on purpose: a review posted by the Wepic Photography account itself
+// (not a customer), and a second, shorter review from the same "kim packs" name.
+//
+// Reviews sent through the website's "Write a review" form arrive on WhatsApp/email.
+// To publish one, add it here with source: "website" (only with the writer's permission).
+// ---------------------------------------------------------------------------
+export const googleListingUrl = "https://www.google.com/maps?cid=3318919443409660594";
+export const googleRating = { rating: 4.8, count: 6, checked: "2026-09-24" };
+
+// Text edits: Kurt's doubled word "time time" is shown once; Lemuel's review is the part
+// Google shows before "More" (the rest was not visible when copied).
+export type Review = { name: string; text: string; source: "google" | "website"; rating?: number };
+export const reviews: Review[] = [
+  {
+    name: "Lemuel Chris Motions",
+    source: "google",
+    text: "I love the cyclorama wall and the space is packed, incredibly diverse. Creative zones that make it easy to shoot an entire portfolio in one visit ❤️",
+  },
+  {
+    name: "Kurt Casono",
+    source: "google",
+    text: "Had a great time. The studio is huge, tons of props and background set ups so you'll never run out of ideas. Highly recommended 💯",
+  },
+  { name: "Kim packs", source: "google", text: "So good" },
 ];

@@ -23,9 +23,7 @@ placeholder — in code with `TODO`, and on the site with a small dashed amber
 | Client lounge (not visible in any photo) | `app/[lang]/studio/page.tsx` | badge |
 | Exact equipment list / models | `locales/*.json` → `studio.equipment` | badge |
 | House rules (draft) | `locales/*.json` → `studio.rules` | “Draft house rules” badge |
-| Testimonials (sample text) | `locales/*.json` → `testimonials.items` | badge + obviously sample text |
 | Event photography images (none in assets) | add images, then `config/site.ts` → `services` (event) and `portfolio` | camera icon + badge / “coming soon” |
-| Exact Google Maps pin | `config/site.ts` → `mapEmbedUrl`, `mapLinkUrl` | map searches the address |
 | Official vector logo (redrawn from the PDF) | `components/Logo.tsx`, `app/icon.svg` | — |
 | Real domain name | `.env.local` → `NEXT_PUBLIC_SITE_URL` | used for SEO links |
 
@@ -136,6 +134,18 @@ The AI assistant reads the same config and locale files, so it always quotes cur
 `scripts/prepare-media.sh` shows how the originals in `../FOR WEBSITE` were converted.
 
 ---
+
+## Reviews
+
+The home page shows real reviews copied from the studio's Google Maps listing
+(`config/site.ts` → `reviews`, plus `googleRating` for the 4.8 ★ / 6 reviews badge —
+update it when the listing changes). The map pin also comes from that listing.
+
+**Write a review:** visitors fill in name, stars, what they booked and their review,
+tick “WEPIC may publish my name and review”, and send it by WhatsApp or email —
+the same hand-off as bookings (the site has no database). To publish one, add it to
+`reviews` in `config/site.ts` with `source: "website"` and `rating`. Nothing appears
+on the site until the studio adds it, so spam and fake reviews can't go live.
 
 ## How the booking works
 
