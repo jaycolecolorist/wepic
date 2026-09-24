@@ -1,0 +1,28 @@
+<!doctype html>
+<!-- Start page for static hosting (GitHub Pages), where proxy.ts can't run:
+     sends visitors to /en/ or /ar/ — remembered choice first, then browser language. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WEPIC Photography</title>
+<meta name="robots" content="noindex">
+<style>body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#020a13;color:#fff;font-family:system-ui,sans-serif}a{color:#00afef;margin:0 .75rem}</style>
+<script>
+  (function () {
+    var lang = null;
+    try { lang = localStorage.getItem("wepic-lang"); } catch (e) {}
+    if (lang !== "en" && lang !== "ar") {
+      var langs = navigator.languages || [navigator.language || "en"];
+      lang = "en";
+      for (var i = 0; i < langs.length; i++) {
+        var l = String(langs[i]).slice(0, 2).toLowerCase();
+        if (l === "ar" || l === "en") { lang = l; break; }
+      }
+    }
+    location.replace("./" + lang + "/" + location.hash);
+  })();
+</script>
+</head>
+<body><p><a href="./en/">English</a> · <a href="./ar/" lang="ar">العربية</a></p></body>
+</html>

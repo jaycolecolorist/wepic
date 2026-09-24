@@ -1,0 +1,56 @@
+# Builds the static version of the site and publishes it to GitHub Pages on every push to main.
+# The AI chat server route and the language-redirect proxy need a server, so they are removed
+# for this build; the chat runs in offline FAQ mode and public/index.html picks the language.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      STATIC_EXPORT: "true"
+      NEXT_PUBLIC_STATIC_EXPORT: "true"
+      NEXT_PUBLIC_BASE_PATH: /wepic
+      NEXT_PUBLIC_SITE_URL: https://jaycolecolorist.github.io/wepic
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run check:i18n
+      - name: Build static site
+        run: |
+          rm -f proxy.ts
+          rm -rf app/api
+          npx next build
+          touch out/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

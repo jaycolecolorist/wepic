@@ -1,0 +1,491 @@
+{
+  "meta": {
+    "siteName": "WEPIC Photography",
+    "siteTitle": "WEPIC Photography — Photography, Videography & Studio Rental in Doha",
+    "siteDescription": "WEPIC Photography is a creative photography studio in Doha, Qatar. Professional photography and videography for individuals and businesses, monthly content packages, and one of the biggest studios for rent in Doha.",
+    "servicesTitle": "Photography & Videography Services",
+    "servicesDescription": "Corporate, personal branding, product, event, portrait, commercial and social media content — photography and video produced by WEPIC in Doha, Qatar.",
+    "studioTitle": "Studio Rental in Doha",
+    "studioDescription": "Rent the WEPIC studio on C-Ring Road, Doha: white infinity cove, styled sets, professional lighting, makeup station and podcast setup. Book by the hour, half day or full day.",
+    "portfolioTitle": "Portfolio",
+    "portfolioDescription": "Selected portraits, product, commercial and automotive work by WEPIC Photography, Doha.",
+    "contactTitle": "Contact",
+    "contactDescription": "Visit WEPIC Photography at C-Ring Road, Building 244, 1st floor, Doha. Call or WhatsApp +974 3388 3327.",
+    "bookTitle": "Book a Shoot or the Studio",
+    "bookDescription": "Request a WEPIC photography package, service or studio rental. Your request is sent straight to our WhatsApp."
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "studio": "Studio Rental",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "book": "Book Now",
+    "menu": "Open menu",
+    "closeMenu": "Close menu",
+    "skip": "Skip to content",
+    "primary": "Main navigation",
+    "switchTo": "عربي",
+    "switchLabel": "التبديل إلى العربية",
+    "current": "EN"
+  },
+  "common": {
+    "qar": "QAR",
+    "perMonth": "/ month",
+    "mostPopular": "Most Popular",
+    "choosePackage": "Choose {name}",
+    "viewAll": "View all work",
+    "learnMore": "Learn more",
+    "placeholder": "Placeholder",
+    "tbc": "To be confirmed",
+    "rateOnRequest": "Rate on request",
+    "playVideo": "Play video: {title}",
+    "close": "Close",
+    "previous": "Previous",
+    "next": "Next",
+    "dohaQatar": "Doha, Qatar",
+    "capturingMoments": "Capturing moments",
+    "photoVideo": "Photography • Videography",
+    "openInMaps": "Open in Google Maps",
+    "tagline": "We don't just shoot. We tell stories.",
+    "imageOf": "Image {n} of {total}"
+  },
+  "hero": {
+    "eyebrow": "Photography • Videography • Studio",
+    "title": "Where Creativity Takes Center Stage",
+    "subtitle": "Create. Capture. Inspire.",
+    "ctaBook": "Book a Shoot",
+    "ctaRent": "Rent the Studio",
+    "scroll": "Scroll",
+    "videoLabel": "Showreel: the WEPIC studio, a fashion shoot and an automotive film"
+  },
+  "about": {
+    "eyebrow": "About WEPIC",
+    "title": "A creative studio built for visual stories",
+    "body": "WEPIC Photography is a creative photography studio established in 2024 in Doha, Qatar, specializing in high-quality visual content for individuals, entrepreneurs, startups, and growing businesses.",
+    "body2": "From one portrait to a full month of social content, we plan, shoot, edit and color-grade everything in-house — and our studio is open for you to rent when you want to create on your own.",
+    "missionTitle": "Our Mission",
+    "mission": "To provide creative, professional, and impactful photography and videography that helps individuals and businesses showcase their identity, grow their brand, and connect with their audience.",
+    "visionTitle": "Our Vision",
+    "vision": "To become one of the leading creative photography and media production companies in Qatar and the region, recognized for innovation, quality, and exceptional client service.",
+    "facts": {
+      "founded": "Established",
+      "foundedValue": "2024",
+      "location": "Based in",
+      "locationValue": "Doha, Qatar",
+      "open": "Open",
+      "openValue": "Sunday – Thursday"
+    }
+  },
+  "services": {
+    "eyebrow": "What we do",
+    "title": "Photography & video for every brand",
+    "intro": "Every shoot is planned around what you need the images to do — sell, introduce, inspire or celebrate. We handle direction, lighting, editing and color grading.",
+    "pageTitle": "Our Services",
+    "pageIntro": "Photography and videography for individuals, entrepreneurs, startups and growing businesses in Qatar. Shot in our studio or on location.",
+    "bookService": "Book this service",
+    "videoTitle": "Videography & reels",
+    "videoBody": "Most of our shoots can include short-form video: reels, product films, speed-ramp car edits, behind-the-scenes and brand promos — shot, edited and color graded by our team.",
+    "items": {
+      "corporate": {
+        "title": "Corporate & Business Photography",
+        "short": "Headshots, team portraits and workplace imagery that make your company look as professional as it is.",
+        "long": "Consistent, polished headshots and team portraits, plus images of your space and people at work — ready for your website, LinkedIn, company profile and press.",
+        "points": ["Executive & team headshots", "Office and workplace imagery", "Company profile visuals"]
+      },
+      "branding": {
+        "title": "Personal Branding",
+        "short": "Portraits that tell people who you are before you say a word.",
+        "long": "For founders, creators, coaches and professionals. We plan looks, locations and poses around your personality and audience so your online presence feels like you — only sharper.",
+        "points": ["Styled portrait sessions", "Multiple looks and set-ups", "Images for social, web and speaking"]
+      },
+      "product": {
+        "title": "Product Photography",
+        "short": "Clean, detailed and appetizing product images that sell.",
+        "long": "From food and beverages to fashion, cosmetics and accessories — studio-lit product photography on clean or styled backgrounds, ready for e-commerce, menus and ads.",
+        "points": ["E-commerce and catalogue shots", "Food & beverage styling", "Creative hero images"]
+      },
+      "event": {
+        "title": "Event Photography",
+        "short": "Coverage of launches, corporate events and celebrations — the moments and the details.",
+        "long": "Discreet, professional coverage of openings, corporate gatherings, brand activations and private celebrations, with edited highlights ready for social media.",
+        "points": ["Corporate events & launches", "Brand activations", "Private celebrations"]
+      },
+      "portrait": {
+        "title": "Portrait Photography",
+        "short": "Studio portraits with character, light and mood.",
+        "long": "Creative and classic portraits in our studio — from clean white backgrounds to dramatic colored light — for individuals, families, models and artists.",
+        "points": ["Creative lighting set-ups", "Fashion & model portfolios", "Classic studio portraits"]
+      },
+      "social": {
+        "title": "Social Media Content Creation",
+        "short": "Scroll-stopping photos and reels made for Instagram and TikTok.",
+        "long": "Content designed for the platforms you post on: vertical reels, carousels and stories, planned in batches so your feed stays consistent. Also available as a monthly package.",
+        "points": ["Reels and short-form video", "Batch content days", "Monthly content packages"]
+      },
+      "commercial": {
+        "title": "Commercial Photography",
+        "short": "Campaign imagery for brands, cars, fashion and hospitality.",
+        "long": "Advertising-grade photography and film for campaigns — including automotive shoots at Doha's landmarks, fashion lookbooks and hospitality visuals.",
+        "points": ["Advertising campaigns", "Automotive shoots", "Fashion lookbooks"]
+      },
+      "startup": {
+        "title": "Startup Business Photography",
+        "short": "A complete visual starter kit for new businesses.",
+        "long": "Launching a business? We create the core set of images you need to go live: founder portraits, product or service shots, and content for your website and first campaigns.",
+        "points": ["Founder & team portraits", "Launch content", "Website-ready image sets"]
+      },
+      "lifestyle": {
+        "title": "Lifestyle Photography",
+        "short": "Natural, story-driven images of people living with your brand.",
+        "long": "Authentic images of people in real moments — fitness, fashion, food and city life — that help your audience imagine your brand in their day.",
+        "points": ["On-location shoots", "Fitness & wellness", "Brand storytelling"]
+      },
+      "marketing": {
+        "title": "Marketing & Promotional Photography",
+        "short": "Images and videos built for ads, offers and launches.",
+        "long": "Promotional visuals designed around your campaign: bold product hero shots, seasonal content such as Ramadan campaigns, and promo videos for paid social.",
+        "points": ["Ad creatives", "Seasonal campaigns", "Promo videos"]
+      }
+    }
+  },
+  "packages": {
+    "eyebrow": "Monthly packages",
+    "title": "Our Monthly Packages",
+    "intro": "Three monthly content packages designed to help build a consistent and premium social media presence.",
+    "note": "Need something different? Every service is also available as a one-off shoot — ask us for a quote.",
+    "items": {
+      "basic": {
+        "name": "Basic",
+        "features": [
+          "1 location per month",
+          "1 shooting session per month",
+          "20 professionally edited photos",
+          "3 reels",
+          "Professional editing & color grading",
+          "Social-media-ready delivery"
+        ]
+      },
+      "essential": {
+        "name": "Essential",
+        "features": [
+          "Up to 2 locations per month",
+          "1 or 2 shooting sessions per month",
+          "25 professionally edited photos",
+          "6 reels",
+          "Professional editing & color grading",
+          "Social-media-ready delivery"
+        ]
+      },
+      "premium": {
+        "name": "Premium",
+        "features": [
+          "Up to 2 locations per month",
+          "1 or 2 shooting sessions per month",
+          "30 professionally edited photos",
+          "10 reels",
+          "Professional editing & color grading",
+          "Content planning support",
+          "Priority delivery"
+        ]
+      }
+    }
+  },
+  "portfolio": {
+    "eyebrow": "Selected work",
+    "title": "Portfolio",
+    "intro": "A selection of recent portraits, products and commercial work shot by WEPIC.",
+    "pageIntro": "Portraits, products, commercial and automotive work — shot in our Doha studio and on location across Qatar.",
+    "filterLabel": "Filter portfolio",
+    "filters": {
+      "all": "All",
+      "portraits": "Portraits",
+      "products": "Products",
+      "events": "Events",
+      "commercial": "Commercial"
+    },
+    "eventsEmpty": "Event photography examples are coming soon.",
+    "open": "Open image: {alt}",
+    "reelsTitle": "Reels & films",
+    "reelsIntro": "Short-form video shot and edited by WEPIC. Tap to play with sound.",
+    "reels": {
+      "studio-tour": "Welcome to the WEPIC studio",
+      "fashion-editorial": "Fashion editorial",
+      "ferrari-reel": "Ferrari at Lusail",
+      "zeekr-speed-ramp": "Zeekr speed ramp",
+      "perfume": "Perfume product film",
+      "watch": "Watch product film",
+      "orange-juice": "Fresh juice product film",
+      "le-bleu": "Le Bleu",
+      "podcast-services": "Podcast recording at WEPIC",
+      "volvo-xc90-film": "Volvo XC90 cinematic film"
+    },
+    "alt": {
+      "product-strawberry-cake": "Slice of strawberry sponge cake dusted with sugar on a dark plate",
+      "product-caramel-brownie": "Caramel-glazed brownie on a black plate with dried flowers",
+      "product-dessert-platter": "Pistachio tartlets topped with raspberries on a marble board",
+      "product-gift-box": "Green branded gift box and bag on fresh grass",
+      "portrait-fitness-rope": "Woman training with battle ropes in a gym",
+      "portrait-man-white-tank": "Man in a white tank top with arms crossed on a light background",
+      "portrait-fitness-pink": "Woman in a pink sports outfit posing in a dark studio",
+      "portrait-white-suit": "Woman in a white suit seated on a chair against a terracotta backdrop",
+      "portrait-rose-abaya-seated": "Woman in a flowing rose-colored dress seated on a rattan chair",
+      "portrait-rose-abaya": "Woman in a rose satin gown seated, fabric flowing across the floor",
+      "portrait-blue-suit-rings": "Woman in a blue suit framed by two red ring lights",
+      "portrait-pinstripe-man": "Young man in a pinstripe suit, corporate portrait",
+      "portrait-red-light": "Man in a dark shirt against a red backdrop with dramatic light",
+      "portrait-red-smoke": "Moody portrait of a man in red light and smoke",
+      "commercial-ferrari-lusail": "Red Ferrari convertible in front of the Lusail towers",
+      "commercial-ferrari-stadium": "Red Ferrari at sunset in front of Lusail Stadium",
+      "commercial-ferrari-sunset": "Red Ferrari convertible in the golden hour near Lusail Stadium",
+      "portrait-monochrome-man": "Black and white portrait of a tattooed man in a black t-shirt",
+      "commercial-spotlight-chair": "Rattan chair under a single spotlight in the studio",
+      "portrait-skyline-silhouette": "Silhouette of a woman at a window overlooking the Doha skyline",
+      "product-watch-vest": "Close-up of a silver watch and a burgundy branded vest",
+      "portrait-floor-pose": "Woman in black lying on a white studio floor, fashion portrait",
+      "portrait-monochrome-dress": "Black and white portrait of a woman in an open-back dress",
+      "portrait-plaid-shirt": "Man in a plaid shirt seated on a stool, smiling",
+      "product-lip-gloss": "Woman smiling while holding a lip gloss, beauty product shot",
+      "product-navy-tee": "Navy sports t-shirt on a white background",
+      "product-black-quarter-zip": "Black quarter-zip sports top on a white background",
+      "portrait-pinstripe-woman": "Woman in a pinstripe suit, studio fashion portrait",
+      "portrait-pinstripe-woman-seated": "Woman in a pinstripe blazer seated, hand on head",
+      "commercial-mustang-side": "Purple Ford Mustang parked at Stadium 974",
+      "commercial-mustang-front": "Front view of a magenta Ford Mustang at Stadium 974",
+      "commercial-mustang-974": "Magenta Ford Mustang on cobblestones at Stadium 974",
+      "portrait-black-abaya": "Woman in a black abaya and hijab, fashion portrait",
+      "portrait-black-abaya-full": "Full-length portrait of a woman in an embellished black abaya",
+      "product-kinza-can": "Lime-flavored soft drink can on a vivid green backdrop"
+    }
+  },
+  "studioTeaser": {
+    "eyebrow": "Studio rental",
+    "title": "Rent one of the biggest studios in Doha",
+    "body": "A bright, open studio on C-Ring Road with a white infinity cove, ready-styled sets, professional lighting, a makeup station and a podcast setup. Bring your team, or book our crew with it.",
+    "cta": "Explore the studio",
+    "points": ["White infinity cove", "Styled sets", "Pro lighting", "Makeup station", "Podcast setup"]
+  },
+  "testimonials": {
+    "eyebrow": "Client stories",
+    "title": "What clients say",
+    "note": "Sample testimonials shown for layout only — replace with real client reviews before launch.",
+    "items": [
+      {
+        "quote": "Sample review — replace with a real client quote about a WEPIC photo shoot.",
+        "name": "Client name",
+        "role": "Business owner"
+      },
+      {
+        "quote": "Sample review — replace with a real client quote about a monthly content package.",
+        "name": "Client name",
+        "role": "Brand manager"
+      },
+      {
+        "quote": "Sample review — replace with a real client quote about renting the WEPIC studio.",
+        "name": "Client name",
+        "role": "Content creator"
+      }
+    ]
+  },
+  "studio": {
+    "eyebrow": "Studio rental",
+    "title": "The WEPIC Studio",
+    "intro": "One of the biggest photography studios in Doha — a bright, open floor with a white infinity cove, ready-styled sets and professional lighting. Rent it by the hour, half day or full day.",
+    "ctaBook": "Book the studio",
+    "ctaTour": "Watch the studio tour",
+    "tourTitle": "Studio tour",
+    "galleryTitle": "Inside the studio",
+    "featuresTitle": "What's in the space",
+    "features": {
+      "cyclorama": { "title": "White infinity cove", "body": "A seamless white cyclorama wall and floor for clean fashion, product and portrait work." },
+      "sets": { "title": "Styled sets", "body": "Ready-dressed sets including a traditional majlis, a purple lounge, a pink paneled wall, a black curtain set and a 3D-panel feature wall." },
+      "lighting": { "title": "Professional lighting", "body": "Softboxes, parabolic umbrellas, lantern softboxes and LED lights on stands, ready to shape." },
+      "makeup": { "title": "Makeup station", "body": "A vanity with a lit mirror for hair, makeup and wardrobe changes." },
+      "podcast": { "title": "Podcast setup", "body": "Record your podcast with premium audio and multi-camera recording, using RØDE PodMic microphones and studio headphones." },
+      "lounge": { "title": "Client lounge", "body": "A comfortable place for clients and talent to wait between set-ups." }
+    },
+    "specsTitle": "Space details",
+    "specs": {
+      "size": "Studio size",
+      "cyclorama": "Infinity cove dimensions",
+      "ceiling": "Ceiling height",
+      "power": "Power",
+      "parking": "Parking",
+      "access": "Access",
+      "accessValue": "1st floor, Building 244, C-Ring Road, Doha"
+    },
+    "equipmentTitle": "Equipment",
+    "equipmentIntro": "Equipment visible in the studio today. The full list with models and quantities is being finalized.",
+    "equipment": {
+      "lighting": { "title": "Lighting", "items": ["Continuous LED lights", "Large softboxes", "Parabolic umbrellas", "Lantern softbox", "Light stands & C-stands"] },
+      "backdrops": { "title": "Backdrops & sets", "items": ["White infinity cove", "Majlis set", "Purple lounge set", "Pink paneled wall", "Black curtain set", "3D-panel feature wall"] },
+      "audio": { "title": "Podcast & audio", "items": ["RØDE PodMic microphones", "Boom arms", "beyerdynamic DT 770 PRO headphones", "Multi-camera recording"] },
+      "extras": { "title": "Extras", "items": ["Makeup vanity with lit mirror", "Chairs, sofas & props"] }
+    },
+    "ratesTitle": "Rental rates",
+    "ratesIntro": "Choose the time you need. Final rates are confirmed with your booking on WhatsApp.",
+    "rates": {
+      "hourly": { "name": "Hourly", "duration": "Per hour", "points": ["Full studio access", "Use of in-house lighting", "Minimum booking to be confirmed"] },
+      "halfDay": { "name": "Half Day", "duration": "4 hours", "points": ["Full studio access", "All sets and lighting", "Makeup station"] },
+      "fullDay": { "name": "Full Day", "duration": "8 hours", "points": ["Full studio access", "All sets and lighting", "Makeup station", "Best value for productions"] }
+    },
+    "addCrew": "Need a photographer or videographer too? Add our crew when you book.",
+    "rulesTitle": "House rules",
+    "rules": [
+      "Your booking is confirmed once the studio replies on WhatsApp.",
+      "Set-up and pack-down happen within your booked time.",
+      "Please keep the infinity cove clean — shoe covers or clean, soft-soled shoes only.",
+      "No food or drinks near equipment or on sets.",
+      "No smoking anywhere in the studio.",
+      "Any damage to equipment or sets is charged at repair cost.",
+      "Extra time is charged at the hourly rate, subject to availability."
+    ],
+    "rulesNote": "Draft house rules — to be confirmed by the studio.",
+    "podcastTitle": "Record your podcast at WEPIC",
+    "podcastBody": "Premium audio and multi-camera recording in a styled set. Bring your guests — we'll handle the mics, cameras and edit.",
+    "bookingTitle": "Book the studio",
+    "bookingIntro": "Pick your date and time — your request opens in WhatsApp, ready to send."
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's create something together",
+    "intro": "Visit the studio, call, or send us a message. The fastest way to reach us is WhatsApp.",
+    "addressLabel": "Studio address",
+    "address": "C-Ring Road, Building 244, 1st floor, Doha, Qatar",
+    "phoneLabel": "Phone & WhatsApp",
+    "emailLabel": "Email",
+    "instagramLabel": "Instagram",
+    "hoursLabel": "Opening days",
+    "hoursValue": "Sunday – Thursday",
+    "hoursTimes": "Opening times to be confirmed",
+    "whatsappCta": "Chat on WhatsApp",
+    "callCta": "Call us",
+    "emailCta": "Send an email",
+    "mapTitle": "Map showing WEPIC Photography on C-Ring Road, Doha",
+    "formTitle": "Send a message",
+    "formIntro": "Write your message — it opens in WhatsApp or your email app, ready to send.",
+    "message": "Your message",
+    "messagePlaceholder": "Tell us about your project…",
+    "sendWhatsapp": "Send on WhatsApp",
+    "sendEmail": "Send by Email",
+    "messageHeading": "New message — WEPIC website",
+    "messageSubject": "Website enquiry from {name}",
+    "sent": "Your message is ready in WhatsApp — just press send.",
+    "sentEmail": "Your message is ready in your email app — just press send.",
+    "social": "Follow us"
+  },
+  "booking": {
+    "eyebrow": "Booking",
+    "title": "Book a shoot or the studio",
+    "intro": "Choose what you'd like to book and when. Your request opens in WhatsApp as a ready-to-send message — no payment is taken online.",
+    "typeLabel": "What would you like to book?",
+    "types": {
+      "package": "Monthly package",
+      "service": "Photography service",
+      "studio": "Studio rental"
+    },
+    "packageLabel": "Package",
+    "serviceLabel": "Service",
+    "studioLabel": "Rental plan",
+    "hoursLabel": "Number of hours",
+    "dateLabel": "Preferred date",
+    "timeLabel": "Preferred time",
+    "nameLabel": "Full name",
+    "phoneLabel": "Phone / WhatsApp number",
+    "phonePlaceholder": "+974 5555 5555",
+    "emailLabel": "Email (optional)",
+    "notesLabel": "Notes (optional)",
+    "notesPlaceholder": "Location, number of people, ideas or references…",
+    "submit": "Send booking via WhatsApp",
+    "sendEmail": "Send by Email instead",
+    "required": "Please fill in this field.",
+    "invalidPhone": "Please enter a valid phone number.",
+    "invalidEmail": "Please enter a valid email address.",
+    "pastDate": "Please choose today or a later date.",
+    "confirmTitle": "Almost done!",
+    "confirmBody": "Your booking request is ready in WhatsApp — just press send. We'll confirm shortly.",
+    "confirmEmail": "Your booking request is ready in your email app — just press send. We'll confirm shortly.",
+    "reopen": "Open WhatsApp again",
+    "reopenEmail": "Open email again",
+    "another": "Make another booking",
+    "popupHint": "If WhatsApp didn't open, use the button below.",
+    "summary": {
+      "heading": "New booking request — WEPIC Photography",
+      "type": "Booking type",
+      "item": "Selection",
+      "hours": "Hours",
+      "date": "Preferred date",
+      "time": "Preferred time",
+      "name": "Name",
+      "phone": "Phone",
+      "email": "Email",
+      "notes": "Notes",
+      "footer": "Sent from the WEPIC website. Please confirm availability.",
+      "subject": "Booking request: {item} — {date}"
+    }
+  },
+  "chat": {
+    "open": "Chat with the WEPIC assistant",
+    "close": "Close chat",
+    "title": "WEPIC Assistant",
+    "subtitle": "Ask about packages, the studio or booking",
+    "placeholder": "Type your message…",
+    "send": "Send",
+    "typing": "Assistant is typing…",
+    "greeting": "Hi! I'm the WEPIC assistant. I can tell you about our packages, services and studio rental, or help you book. What would you like to do?",
+    "offline": "Offline FAQ mode",
+    "error": "Sorry, something went wrong. You can still reach us on WhatsApp at +974 3388 3327.",
+    "bookingReady": "Your booking request is ready. Tap WhatsApp to send it to the studio.",
+    "openWhatsapp": "Send on WhatsApp",
+    "openEmail": "Send by Email",
+    "restart": "Start over",
+    "logLabel": "Chat messages",
+    "chips": {
+      "packages": "See packages",
+      "studio": "Rent the studio",
+      "hours": "Opening hours",
+      "book": "Book now"
+    }
+  },
+  "kb": {
+    "packages": "We offer three monthly content packages:\n• Basic — QAR 2,500/month: 1 location, 1 session, 20 edited photos, 3 reels.\n• Essential — QAR 3,900/month: up to 2 locations, 1–2 sessions, 25 edited photos, 6 reels.\n• Premium — QAR 5,900/month: up to 2 locations, 1–2 sessions, 30 edited photos, 10 reels, content planning support and priority delivery.\nAll include professional editing & color grading and social-media-ready delivery. Would you like to book one?",
+    "studio": "Our studio on C-Ring Road is one of the biggest in Doha. It has a white infinity cove, styled sets (majlis, purple lounge, pink paneled wall, black curtain, 3D-panel wall), professional lighting, a makeup station and a podcast setup. You can rent it hourly, for a half day (4 hours) or a full day (8 hours). Rates are confirmed on booking — would you like to request a date?",
+    "hours": "We're open Sunday to Thursday. Exact opening times are confirmed when you book — message us on WhatsApp at +974 3388 3327.",
+    "location": "We're at C-Ring Road, Building 244, 1st floor, Doha, Qatar. Here's the map: {map}",
+    "contact": "Phone & WhatsApp: +974 3388 3327\nEmail: Wepic.qa@gmail.com\nInstagram: @Wepic.qa",
+    "services": "We shoot corporate & business, personal branding, product, event, portrait, social media content, commercial, startup, lifestyle and marketing & promotional photography — plus videography and reels. Which one are you interested in?",
+    "podcast": "Yes — you can record your podcast at WEPIC with premium audio (RØDE PodMic microphones) and multi-camera recording in a styled set. Want to book a session?",
+    "prices": "Monthly packages are QAR 2,500 (Basic), QAR 3,900 (Essential) and QAR 5,900 (Premium). Studio rental and one-off shoots are quoted on request — I can send your request to the team on WhatsApp.",
+    "about": "WEPIC Photography is a creative photography studio established in 2024 in Doha, Qatar, creating high-quality visual content for individuals, entrepreneurs, startups and growing businesses.",
+    "greeting": "Hello! How can I help you today?",
+    "thanks": "You're welcome! Anything else I can help with?",
+    "unknown": "I'm not sure about that one. I can help with packages, services, studio rental, opening days, location or making a booking — or you can ask the team directly on WhatsApp at +974 3388 3327."
+  },
+  "flow": {
+    "askType": "Great — what would you like to book?",
+    "askPackage": "Which package would you like?",
+    "askService": "Which service are you interested in?",
+    "askStudio": "Which rental plan suits you?",
+    "askHours": "How many hours do you need?",
+    "askDate": "What date would you prefer? (for example 12 October)",
+    "askTime": "What time would you like to start? (for example 10:00 am)",
+    "askName": "What's your name?",
+    "askPhone": "What's the best phone or WhatsApp number to reach you?",
+    "askNotes": "Any notes for the team — location, number of people, ideas? (or type \"no\")",
+    "invalidPhone": "That doesn't look like a phone number — could you check it?",
+    "skip": "No notes",
+    "cancelled": "No problem, I've cancelled that booking. What else can I help with?"
+  },
+  "footer": {
+    "about": "A creative photography studio in Doha, Qatar — photography, videography and studio rental.",
+    "explore": "Explore",
+    "contact": "Contact",
+    "rights": "All rights reserved.",
+    "madeIn": "Made in Doha, Qatar"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "The page you're looking for doesn't exist or has moved.",
+    "home": "Back to home"
+  }
+}
