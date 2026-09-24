@@ -45,7 +45,7 @@ export default async function StudioPage({ params }: PageProps<"/[lang]/studio">
       </PageHero>
 
       {/* Features */}
-      <section className="bg-offwhite py-20 sm:py-28">
+      <section className="bg-offwhite py-12 sm:py-28">
         <div className="container-x">
           <SectionHeading eyebrow={s.eyebrow} title={s.featuresTitle} />
           <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -87,7 +87,7 @@ export default async function StudioPage({ params }: PageProps<"/[lang]/studio">
       </section>
 
       {/* Specs + equipment */}
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white py-12 sm:py-28">
         <div className="container-x grid gap-16 lg:grid-cols-2">
           <Reveal>
             <h2 className="display text-3xl text-ink sm:text-4xl">{s.specsTitle}</h2>
@@ -127,7 +127,7 @@ export default async function StudioPage({ params }: PageProps<"/[lang]/studio">
         <div aria-hidden className="glow-arc -start-[25vmax] -top-[30vmax] h-[60vmax] w-[60vmax] opacity-50" />
         <div className="container-x relative">
           <SectionHeading eyebrow={s.eyebrow} title={s.ratesTitle} intro={s.ratesIntro} dark align="center" />
-          <div className="mt-14 grid gap-6 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:mt-14 lg:grid-cols-3">
             {rentalPlans.map((plan, i) => {
               const r = s.rates[plan.id];
               return (
@@ -158,7 +158,7 @@ export default async function StudioPage({ params }: PageProps<"/[lang]/studio">
       </section>
 
       {/* Rules + booking */}
-      <section id="book-studio" className="scroll-mt-20 bg-offwhite py-20 sm:py-28">
+      <section id="book-studio" className="scroll-mt-20 bg-offwhite py-12 sm:py-28">
         <div className="container-x grid gap-14 lg:grid-cols-[1fr_1.3fr]">
           <Reveal>
             <h2 className="display text-3xl text-ink sm:text-4xl">{s.rulesTitle}</h2>

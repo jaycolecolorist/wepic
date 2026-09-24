@@ -23,7 +23,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
       <About dict={dict} />
       <ServicesGrid locale={lang} dict={dict} />
       <Packages locale={lang} dict={dict} />
-      <section id="portfolio" className="bg-midnight py-24 sm:py-32">
+      <section id="portfolio" className="bg-midnight py-14 sm:py-32">
         <div className="container-x">
           <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
             <SectionHeading eyebrow={dict.portfolio.eyebrow} title={dict.portfolio.title} intro={dict.portfolio.intro} dark />

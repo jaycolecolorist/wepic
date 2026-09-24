@@ -64,7 +64,7 @@ export function Header() {
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:start-4 focus:top-3 focus:z-50 focus:rounded-full focus:bg-cyan focus:px-4 focus:py-2 focus:text-midnight">
         {dict.nav.skip}
       </a>
-      <div className="container-x flex h-[72px] items-center justify-between gap-6">
+      <div className="container-x relative flex h-16 items-center sm:h-[72px] justify-between gap-6">
         <Link href={href(locale)} aria-label={dict.meta.siteName} className="shrink-0">
           <Logo />
         </Link>
@@ -95,7 +95,7 @@ export function Header() {
           <button
             ref={menuButton}
             type="button"
-            className="relative flex h-11 w-11 items-center justify-center rounded-full text-white lg:hidden"
+            className="relative flex h-10 w-10 items-center justify-center rounded-full text-white lg:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? dict.nav.closeMenu : dict.nav.menu}
@@ -110,37 +110,50 @@ export function Header() {
 
       <AnimatePresence>
         {open && (
-          <motion.nav
-            id="mobile-menu"
-            aria-label={dict.nav.primary}
-            initial={{ opacity: 0, y: -12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-x-0 bottom-0 top-[72px] overflow-y-auto bg-midnight lg:hidden"
-          >
-            <div className="container-x flex min-h-full flex-col pb-10 pt-6">
-              <ul className="flex flex-col gap-1">
-                {nav.map((item, i) => (
-                  <motion.li key={item.path} initial={{ opacity: 0, x: locale === "ar" ? 20 : -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.05 * i + 0.1 }}>
-                    <Link
-                      href={href(locale, item.path)}
-                      aria-current={isActive(item.path) ? "page" : undefined}
-                      className={`display block py-3 text-4xl ${isActive(item.path) ? "text-cyan" : "text-white"}`}
-                    >
-                      {item.label}
-                    </Link>
-                  </motion.li>
-                ))}
-              </ul>
-              <div className="mt-auto flex flex-col gap-5">
-                <Link href={href(locale, "/book")} className="btn btn-primary w-full">
-                  {dict.nav.book}
-                </Link>
-                <LanguageSwitcher />
+          <>
+            {/* Blurred page behind the menu — tap it to close. */}
+            <motion.div
+              aria-hidden
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              onClick={() => setOpen(false)}
+              className="fixed inset-x-0 bottom-0 top-16 bg-midnight/40 backdrop-blur-md sm:top-[72px] lg:hidden"
+            />
+            <motion.nav
+              id="mobile-menu"
+              aria-label={dict.nav.primary}
+              initial={{ opacity: 0, y: -12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="absolute inset-x-0 top-full max-h-[calc(100dvh-5rem)] overflow-y-auto rounded-b-3xl bg-midnight shadow-[0_24px_60px_-20px_rgba(0,0,0,0.8)] ring-1 ring-white/10 lg:hidden"
+            >
+              <div className="container-x pb-6 pt-2">
+                <ul className="flex flex-col">
+                  {nav.map((item, i) => (
+                    <motion.li key={item.path} initial={{ opacity: 0, x: locale === "ar" ? 16 : -16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.04 * i + 0.05 }}>
+                      <Link
+                        href={href(locale, item.path)}
+                        aria-current={isActive(item.path) ? "page" : undefined}
+                        className={`display flex items-center justify-between border-b border-white/[0.07] py-3 text-lg ${isActive(item.path) ? "text-cyan" : "text-white"}`}
+                      >
+                        {item.label}
+                        {isActive(item.path) && <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-cyan shadow-[0_0_10px_var(--color-cyan)]" />}
+                      </Link>
+                    </motion.li>
+                  ))}
+                </ul>
+                <div className="mt-5 flex items-center justify-between gap-4">
+                  <LanguageSwitcher />
+                  <Link href={href(locale, "/book")} className="btn btn-primary !min-h-10 !px-5 !py-2">
+                    {dict.nav.book}
+                  </Link>
+                </div>
               </div>
-            </div>
-          </motion.nav>
+            </motion.nav>
+          </>
         )}
       </AnimatePresence>
     </header>

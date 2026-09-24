@@ -48,6 +48,25 @@ export function ChatWidget() {
   const listRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const launcherRef = useRef<HTMLButtonElement>(null);
+  // Phone keyboard: how much of the screen it covers, so the panel sits above it instead of being pushed off-screen.
+  const [kb, setKb] = useState<{ bottom: number; height: number } | null>(null);
+
+  useEffect(() => {
+    const vv = window.visualViewport;
+    if (!open || !vv) return;
+    const update = () => {
+      const covered = window.innerHeight - vv.height - vv.offsetTop;
+      setKb(covered > 80 ? { bottom: covered, height: vv.height } : null);
+    };
+    update();
+    vv.addEventListener("resize", update);
+    vv.addEventListener("scroll", update);
+    return () => {
+      vv.removeEventListener("resize", update);
+      vv.removeEventListener("scroll", update);
+      setKb(null);
+    };
+  }, [open]);
 
   // Greeting + chips follow the page language (until the visitor starts talking).
   useEffect(() => {
@@ -58,11 +77,11 @@ export function ChatWidget() {
 
   useEffect(() => {
     listRef.current?.scrollTo({ top: listRef.current.scrollHeight, behavior: "smooth" });
-  }, [messages, busy]);
+  }, [messages, busy, kb]);
 
   useEffect(() => {
     if (!open) return;
-    inputRef.current?.focus();
+    if (!window.matchMedia("(pointer: coarse)").matches) inputRef.current?.focus();
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setOpen(false);
@@ -141,11 +160,12 @@ export function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.97 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed bottom-24 end-3 z-[60] flex h-[min(640px,calc(100dvh-8rem))] w-[calc(100vw-1.5rem)] max-w-[400px] flex-col overflow-hidden rounded-3xl bg-midnight text-white shadow-[0_20px_80px_-10px_rgba(0,0,0,0.6),0_0_0_1px_rgba(0,175,239,0.25)] sm:end-6"
+            style={kb ? { bottom: kb.bottom + 8, height: Math.min(kb.height - 16, 420) } : undefined}
+            className="fixed bottom-[4.75rem] end-3 z-[60] flex h-[min(420px,56dvh)] w-[min(320px,calc(100vw-1.5rem))] flex-col overflow-hidden rounded-2xl sm:bottom-24 sm:h-[min(640px,calc(100dvh-8rem))] sm:w-[400px] sm:rounded-3xl bg-midnight text-white shadow-[0_20px_80px_-10px_rgba(0,0,0,0.6),0_0_0_1px_rgba(0,175,239,0.25)] sm:end-6"
           >
             {/* Header */}
-            <div className="relative flex items-center gap-3 border-b border-white/10 bg-gradient-to-br from-navy-2 to-midnight px-5 py-4">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan/10 ring-1 ring-cyan/40">
+            <div className="relative flex items-center gap-3 border-b border-white/10 bg-gradient-to-br from-navy-2 to-midnight px-4 py-3 sm:px-5 sm:py-4">
+              <span className="flex h-9 w-9 shrink-0 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-cyan/10 ring-1 ring-cyan/40">
                 <Monogram className="h-5 w-auto text-cyan" />
               </span>
               <div className="min-w-0 flex-1">
@@ -163,12 +183,12 @@ export function ChatWidget() {
             </div>
 
             {/* Messages */}
-            <div ref={listRef} role="log" aria-live="polite" aria-label={c.logLabel} className="flex-1 space-y-3 overflow-y-auto px-4 py-5">
+            <div ref={listRef} role="log" aria-live="polite" aria-label={c.logLabel} className="flex-1 space-y-2.5 overflow-y-auto overscroll-contain px-3 py-4 sm:space-y-3 sm:px-4 sm:py-5">
               {messages.map((m) => (
                 <div key={m.id} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
                   <div
                     dir="auto"
-                    className={`max-w-[85%] whitespace-pre-line rounded-2xl px-4 py-2.5 text-[0.94rem] leading-relaxed ${
+                    className={`max-w-[85%] whitespace-pre-line rounded-2xl px-3.5 py-2 text-[0.94rem] leading-relaxed sm:px-4 sm:py-2.5 ${
                       m.role === "user" ? "rounded-ee-md bg-cyan text-midnight" : "rounded-es-md bg-white/[0.07] text-white/90 ring-1 ring-white/10"
                     }`}
                   >
@@ -199,13 +219,13 @@ export function ChatWidget() {
 
             {/* Quick replies */}
             {chips.length > 0 && !busy && (
-              <div className="scrollbar-none flex gap-2 overflow-x-auto px-4 pb-3">
+              <div className="scrollbar-none flex gap-2 overflow-x-auto px-3 pb-2.5 sm:px-4 sm:pb-3">
                 {chips.map((ch) => (
                   <button
                     key={ch.value}
                     type="button"
                     onClick={() => send(ch.label, ch.value)}
-                    className="shrink-0 rounded-full border border-cyan/40 bg-cyan/5 px-3.5 py-2 text-sm text-cyan-soft transition hover:bg-cyan hover:text-midnight"
+                    className="shrink-0 rounded-full border border-cyan/40 bg-cyan/5 px-3 py-1.5 text-sm sm:px-3.5 sm:py-2 text-cyan-soft transition hover:bg-cyan hover:text-midnight"
                   >
                     {ch.label}
                   </button>
@@ -219,7 +239,7 @@ export function ChatWidget() {
                 e.preventDefault();
                 send(input);
               }}
-              className="flex items-end gap-2 border-t border-white/10 p-3"
+              className="flex items-end gap-2 border-t border-white/10 p-2.5 sm:p-3"
             >
               <label htmlFor="wepic-chat-input" className="sr-only">
                 {c.placeholder}
@@ -239,9 +259,9 @@ export function ChatWidget() {
                     send(input);
                   }
                 }}
-                className="max-h-32 min-h-11 flex-1 resize-none rounded-2xl bg-white/[0.06] px-4 py-2.5 text-[0.95rem] text-white ring-1 ring-white/10 placeholder:text-white/40 focus:outline-none focus:ring-cyan"
+                className="max-h-28 min-h-10 flex-1 resize-none rounded-2xl bg-white/[0.06] px-3.5 py-2 text-[16px] text-white sm:px-4 sm:py-2.5 ring-1 ring-white/10 placeholder:text-white/40 focus:outline-none focus:ring-cyan"
               />
-              <button type="submit" disabled={!input.trim() || busy} aria-label={c.send} className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-cyan text-midnight transition disabled:opacity-40">
+              <button type="submit" disabled={!input.trim() || busy} aria-label={c.send} className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-cyan text-midnight transition disabled:opacity-40 sm:h-11 sm:w-11">
                 <SendIcon className="h-5 w-5" />
               </button>
             </form>
@@ -256,10 +276,10 @@ export function ChatWidget() {
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-label={open ? c.close : c.open}
-        className="group fixed bottom-5 end-5 z-[60] flex h-16 w-16 items-center justify-center rounded-full bg-cyan text-midnight shadow-[0_10px_40px_-6px_rgba(0,175,239,0.8)] transition hover:scale-105 sm:bottom-6 sm:end-6"
+        className="group fixed bottom-4 end-4 z-[60] flex h-13 w-13 items-center justify-center rounded-full bg-cyan text-midnight shadow-[0_10px_40px_-6px_rgba(0,175,239,0.8)] transition hover:scale-105 sm:bottom-6 sm:end-6 sm:h-16 sm:w-16"
       >
         <span aria-hidden className="absolute inset-0 animate-ping rounded-full bg-cyan/30 [animation-duration:3s] group-aria-expanded:hidden motion-reduce:hidden" />
-        {open ? <CloseIcon className="relative h-7 w-7" /> : <ChatIcon className="relative h-7 w-7" />}
+        {open ? <CloseIcon className="relative h-6 w-6 sm:h-7 sm:w-7" /> : <ChatIcon className="relative h-6 w-6 sm:h-7 sm:w-7" />}
       </button>
     </>
   );

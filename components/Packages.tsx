@@ -15,7 +15,7 @@ export function Packages({ locale, dict, id = "packages" }: { locale: Locale; di
       <div aria-hidden className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(2,120,190,0.35),transparent_60%)]" />
       <div className="container-x relative">
         <SectionHeading eyebrow={dict.packages.eyebrow} title={dict.packages.title} intro={dict.packages.intro} dark align="center" />
-        <div className="mt-16 grid items-stretch gap-6 lg:grid-cols-3 lg:gap-8">
+        <div className="mt-10 grid items-stretch gap-6 sm:mt-16 lg:grid-cols-3 lg:gap-8">
           {packages.map((p, i) => {
             const item = dict.packages.items[p.id];
             return (

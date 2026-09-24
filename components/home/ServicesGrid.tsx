@@ -9,7 +9,7 @@ import { ServiceVisual } from "../ServiceVisual";
 
 export function ServicesGrid({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (
-    <section className="relative overflow-hidden bg-white py-24 sm:py-32">
+    <section className="relative overflow-hidden bg-white py-14 sm:py-32">
       <div className="container-x">
         <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
           <SectionHeading eyebrow={dict.services.eyebrow} title={dict.services.title} intro={dict.services.intro} />
@@ -19,7 +19,7 @@ export function ServicesGrid({ locale, dict }: { locale: Locale; dict: Dictionar
             </Link>
           </Reveal>
         </div>
-        <ul className="mt-14 grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 lg:grid-cols-5">
+        <ul className="mt-10 grid grid-cols-2 gap-3 sm:mt-14 sm:gap-5 md:grid-cols-3 lg:grid-cols-5">
           {services.map((s, i) => {
             const item = dict.services.items[s.id];
             return (

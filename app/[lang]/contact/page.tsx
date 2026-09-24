@@ -32,7 +32,7 @@ export default async function ContactPage({ params }: PageProps<"/[lang]/contact
           <InstagramIcon className="h-5 w-5" /> <span className="ltr">{site.instagram.handle}</span>
         </a>
       </PageHero>
-      <section className="bg-offwhite py-20 sm:py-28">
+      <section className="bg-offwhite py-12 sm:py-28">
         <div className="container-x grid gap-12 lg:grid-cols-[1.2fr_1fr]">
           <Reveal className="rounded-[1.75rem] bg-white p-6 shadow-sm ring-1 ring-ink/5 sm:p-10">
             <h2 className="display text-3xl text-ink">{c.formTitle}</h2>

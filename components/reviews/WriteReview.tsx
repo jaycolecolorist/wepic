@@ -84,7 +84,7 @@ export function WriteReview() {
   const shown = hover || rating;
 
   return (
-    <div className="mx-auto mt-12 max-w-2xl">
+    <div className="mx-auto mt-8 max-w-2xl sm:mt-12">
       {!open && (
         <div className="flex justify-center">
           <button ref={openBtn} type="button" onClick={() => setOpen(true)} aria-expanded={false} aria-controls={`${uid}-panel`} className="btn btn-primary">
@@ -101,7 +101,7 @@ export function WriteReview() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 16 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-ink/5 sm:p-10"
+            className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-ink/5 sm:rounded-3xl sm:p-10"
           >
             {sent ? (
               <div className="text-center" role="status">
@@ -123,7 +123,7 @@ export function WriteReview() {
                 </div>
                 <p className="mt-2 text-charcoal/70">{r.intro}</p>
 
-                <div className="mt-8 grid gap-6">
+                <div className="mt-6 grid gap-5 sm:mt-8 sm:gap-6">
                   <div>
                     <label htmlFor={`${uid}-name`} className="label text-charcoal">{r.name}</label>
                     <input {...field("name")} autoFocus className="field" autoComplete="name" maxLength={80} value={name} onChange={(e) => setName(e.target.value)} />
@@ -150,7 +150,7 @@ export function WriteReview() {
                           />
                           <span className="sr-only">{fmt(r.stars, { n })}</span>
                           <StarShape
-                            className={`h-10 w-10 rounded-md transition peer-focus-visible:ring-2 peer-focus-visible:ring-cyan ${n <= shown ? "text-amber-400" : "text-ink/15"}`}
+                            className={`h-9 w-9 rounded-md sm:h-10 sm:w-10 transition peer-focus-visible:ring-2 peer-focus-visible:ring-cyan ${n <= shown ? "text-amber-400" : "text-ink/15"}`}
                           />
                         </label>
                       ))}

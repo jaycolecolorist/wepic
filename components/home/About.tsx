@@ -11,7 +11,7 @@ export function About({ dict }: { dict: Dictionary }) {
     [a.facts.open, a.facts.openValue],
   ];
   return (
-    <section id="about" className="relative overflow-hidden bg-offwhite py-24 sm:py-32">
+    <section id="about" className="relative overflow-hidden bg-offwhite py-14 sm:py-32">
       <div className="container-x grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <Reveal className="relative order-2 lg:order-1">
           <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl shadow-navy/20">

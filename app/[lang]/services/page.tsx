@@ -30,7 +30,7 @@ export default async function ServicesPage({ params }: PageProps<"/[lang]/servic
         <Link href="#packages" className="btn btn-ghost">{dict.packages.title}</Link>
       </PageHero>
 
-      <section className="bg-offwhite py-20 sm:py-28">
+      <section className="bg-offwhite py-12 sm:py-28">
         <div className="container-x space-y-20 sm:space-y-28">
           {services.map((s, i) => {
             const item = dict.services.items[s.id];

@@ -26,7 +26,7 @@ export default async function PortfolioPage({ params }: PageProps<"/[lang]/portf
           <PortfolioGrid />
         </div>
       </section>
-      <section id="reels" className="scroll-mt-20 bg-navy py-20 sm:py-28">
+      <section id="reels" className="scroll-mt-20 bg-navy py-12 sm:py-28">
         <div className="container-x">
           <SectionHeading eyebrow={dict.common.photoVideo} title={dict.portfolio.reelsTitle} intro={dict.portfolio.reelsIntro} dark />
           <div className="mt-12">

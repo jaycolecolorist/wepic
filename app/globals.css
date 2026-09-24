@@ -28,9 +28,17 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Phones: everything is sized in rem, so a 14px root scales the whole layout down ~12%
+       — closer to how the site feels on a laptop, still readable. */
+    font-size: 87.5%;
     -webkit-text-size-adjust: 100%;
     color-scheme: light;
   }
+  @media (min-width: 640px) {
+    html { font-size: 100%; }
+  }
+  /* iOS zooms the whole page when a text box under 16px gets focus — keep inputs at 16px. */
+  input, textarea, select { font-size: max(16px, 1em); }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
   }
@@ -184,7 +192,7 @@
     border: 1.5px solid rgba(12, 17, 23, 0.15);
     background: #fff;
     color: var(--color-ink);
-    font-size: 1rem;
+    font-size: 16px;
     transition: border-color 0.2s, box-shadow 0.2s;
   }
   .field:focus {
