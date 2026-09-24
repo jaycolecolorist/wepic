@@ -48,20 +48,29 @@ export function ChatWidget() {
   const listRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const launcherRef = useRef<HTMLButtonElement>(null);
-  // Phone keyboard: how much of the screen it covers, so the panel sits above it instead of being pushed off-screen.
-  const [kb, setKb] = useState<{ bottom: number; height: number } | null>(null);
+  // Phone keyboard: pin the panel to the part of the screen that is still visible above the keyboard.
+  // Measured from the visual viewport (what the eye sees), so it works whether the browser shrinks
+  // the page (Android) or slides it up under the keyboard (iPhone).
+  const [kb, setKb] = useState<{ top: number; height: number } | null>(null);
 
   useEffect(() => {
     const vv = window.visualViewport;
     if (!open || !vv) return;
+    let raf = 0;
     const update = () => {
-      const covered = window.innerHeight - vv.height - vv.offsetTop;
-      setKb(covered > 80 ? { bottom: covered, height: vv.height } : null);
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const keyboard = document.documentElement.clientHeight - vv.height > 120;
+        if (!keyboard) return setKb(null);
+        const height = Math.min(420, vv.height - 16);
+        setKb({ top: vv.offsetTop + vv.height - height - 8, height });
+      });
     };
     update();
     vv.addEventListener("resize", update);
     vv.addEventListener("scroll", update);
     return () => {
+      cancelAnimationFrame(raf);
       vv.removeEventListener("resize", update);
       vv.removeEventListener("scroll", update);
       setKb(null);
@@ -160,7 +169,7 @@ export function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.97 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            style={kb ? { bottom: kb.bottom + 8, height: Math.min(kb.height - 16, 420) } : undefined}
+            style={kb ? { top: kb.top, bottom: "auto", height: kb.height } : undefined}
             className="fixed bottom-[4.75rem] end-3 z-[60] flex h-[min(420px,56dvh)] w-[min(320px,calc(100vw-1.5rem))] flex-col overflow-hidden rounded-2xl sm:bottom-24 sm:h-[min(640px,calc(100dvh-8rem))] sm:w-[400px] sm:rounded-3xl bg-midnight text-white shadow-[0_20px_80px_-10px_rgba(0,0,0,0.6),0_0_0_1px_rgba(0,175,239,0.25)] sm:end-6"
           >
             {/* Header */}

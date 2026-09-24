@@ -37,7 +37,8 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
   };
 }
 
-export const viewport: Viewport = { themeColor: "#020a13", colorScheme: "dark" };
+// resizes-content: on Android the page shrinks above the keyboard instead of being pushed under it.
+export const viewport: Viewport = { themeColor: "#020a13", colorScheme: "dark", interactiveWidget: "resizes-content" };
 
 export default async function RootLayout({ children, params }: LayoutProps<"/[lang]">) {
   const { lang } = await params;

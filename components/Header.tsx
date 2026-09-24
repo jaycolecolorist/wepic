@@ -50,13 +50,15 @@ export function Header() {
     };
   }, [open]);
 
+  const rtl = locale === "ar";
+  const ease = [0.22, 1, 0.36, 1] as const;
+  const duration = 0.45;
+
   return (
+    <>
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        // No backdrop-filter while the menu is open: it would trap the fixed-position menu inside the header box.
-        open
-          ? "bg-midnight"
-          : scrolled
+        open || scrolled
             ? "bg-midnight/85 shadow-[0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-xl"
             : "bg-gradient-to-b from-midnight/70 to-transparent"
       }`}
@@ -108,54 +110,56 @@ export function Header() {
         </div>
       </div>
 
-      <AnimatePresence>
-        {open && (
-          <>
-            {/* Blurred page behind the menu — tap it to close. */}
-            <motion.div
-              aria-hidden
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              onClick={() => setOpen(false)}
-              className="fixed inset-x-0 bottom-0 top-16 bg-midnight/40 backdrop-blur-md sm:top-[72px] lg:hidden"
-            />
-            <motion.nav
-              id="mobile-menu"
-              aria-label={dict.nav.primary}
-              initial={{ opacity: 0, y: -12 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute inset-x-0 top-full max-h-[calc(100dvh-5rem)] overflow-y-auto rounded-b-3xl bg-midnight shadow-[0_24px_60px_-20px_rgba(0,0,0,0.8)] ring-1 ring-white/10 lg:hidden"
-            >
-              <div className="container-x pb-6 pt-2">
-                <ul className="flex flex-col">
-                  {nav.map((item, i) => (
-                    <motion.li key={item.path} initial={{ opacity: 0, x: locale === "ar" ? 16 : -16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.04 * i + 0.05 }}>
-                      <Link
-                        href={href(locale, item.path)}
-                        aria-current={isActive(item.path) ? "page" : undefined}
-                        className={`display flex items-center justify-between border-b border-white/[0.07] py-3 text-lg ${isActive(item.path) ? "text-cyan" : "text-white"}`}
-                      >
-                        {item.label}
-                        {isActive(item.path) && <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-cyan shadow-[0_0_10px_var(--color-cyan)]" />}
-                      </Link>
-                    </motion.li>
-                  ))}
-                </ul>
-                <div className="mt-5 flex items-center justify-between gap-4">
-                  <LanguageSwitcher />
-                  <Link href={href(locale, "/book")} className="btn btn-primary !min-h-10 !px-5 !py-2">
-                    {dict.nav.book}
-                  </Link>
-                </div>
-              </div>
-            </motion.nav>
-          </>
-        )}
-      </AnimatePresence>
+
     </header>
+
+    {/* Mobile menu: slides in from the side (right in English, left in Arabic) with the page blurring
+        behind it at the same pace. Lives outside <header> so the header's blur can't trap it. */}
+    <AnimatePresence>
+      {open && (
+        <>
+          <motion.div
+            aria-hidden
+            initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            animate={{ opacity: 1, backdropFilter: "blur(10px)" }}
+            exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            transition={{ duration, ease }}
+            onClick={() => setOpen(false)}
+            className="fixed inset-x-0 bottom-0 top-16 z-[65] bg-midnight/45 sm:top-[72px] lg:hidden"
+          />
+          <motion.nav
+            id="mobile-menu"
+            aria-label={dict.nav.primary}
+            initial={{ x: rtl ? "-100%" : "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: rtl ? "-100%" : "100%" }}
+            transition={{ duration, ease }}
+            className="fixed bottom-0 end-0 top-16 z-[65] flex w-[min(78vw,320px)] flex-col overflow-y-auto border-s border-white/10 bg-midnight shadow-[0_0_60px_-10px_rgba(0,0,0,0.9)] sm:top-[72px] lg:hidden"
+          >
+            <ul className="flex flex-col px-6 pt-4">
+              {nav.map((item, i) => (
+                <motion.li key={item.path} initial={{ opacity: 0, x: rtl ? -16 : 16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.05 * i + 0.12, duration: 0.35, ease }}>
+                  <Link
+                    href={href(locale, item.path)}
+                    aria-current={isActive(item.path) ? "page" : undefined}
+                    className={`display flex items-center justify-between border-b border-white/[0.07] py-3.5 text-lg ${isActive(item.path) ? "text-cyan" : "text-white"}`}
+                  >
+                    {item.label}
+                    {isActive(item.path) && <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-cyan shadow-[0_0_10px_var(--color-cyan)]" />}
+                  </Link>
+                </motion.li>
+              ))}
+            </ul>
+            <div className="mt-auto flex flex-col gap-4 px-6 pb-8 pt-6">
+              <Link href={href(locale, "/book")} className="btn btn-primary w-full">
+                {dict.nav.book}
+              </Link>
+              <LanguageSwitcher className="justify-center" />
+            </div>
+          </motion.nav>
+        </>
+      )}
+    </AnimatePresence>
+    </>
   );
 }
